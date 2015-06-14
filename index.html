@@ -18,6 +18,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/mystyle.css" rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Grand+Hotel:400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet:100,300,400,500,600,700,800,900' type='text/css'>
 <!-- Menu -->
@@ -278,6 +279,117 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <div class="content_top">
    <div class="container">
+   	  <div>
+	     <div class="container">
+	     <div class="col-md-10 dropdown-buttons">   
+    	  <div class="col-md-4 dropdown-button">           			
+    		<div class="section_room">
+				 <select id="country" onchange="change_country(this.value)" class="frm-field required">
+					<option value="null">All Locations</option>
+					<option value="null">Business</option>         
+					<option value="AX">First Class</option>
+					<option value="AX">Premium Economy</option>
+				 </select>
+			  </div>
+			</div>
+		    <div class="col-md-4 dropdown-button">
+			  <div class="section_room">
+				 <select id="country" onchange="change_country(this.value)" class="frm-field required">
+					<option value="null">All Property types</option>
+					<option value="null">House</option>         
+					<option value="AX">Apartment</option>
+					<option value="AX">Premium Economy</option>
+				 </select>
+			  </div>
+			 </div>
+			 <div class="col-md-4 dropdown-button">
+			  <div class="section_room">
+				 <select id="country" onchange="change_country(this.value)" class="frm-field required">
+					<option value="null">All contracts</option>
+					<option value="null">Sale</option>         
+					<option value="AX">Rent</option>
+					<option value="AX">Sold</option>
+				 </select>
+			  </div>
+			 </div>
+		   </div> 
+		   <div class="col-md-2 submit_button"> 
+		   	  <form>
+		   	     <input type="submit" value="Search">
+		   	  </form>
+		   </div> 
+		 </div>
+
+        <!--筛选框 start-->
+        <div id="filterBox" class="clr_after">
+            <!-- <div class="hfilter_top" id="filterTipPanel"></div> -->
+            <div class="filter_area_bg" id="filtersPanel">
+                <div class="filter_area">
+                    <div id="positionFilter" style="display:none"></div>
+                    <div id="priceFilter" class="js_filter_panel pricefilter">
+                        <div class="filter_b clr_after">
+                            <p class="filter_title">价格范围</p>
+                            <div class="filter_rbox" >
+                                <p class="unlimited">
+                                    <a href="#" onclick="return false" class="selected">不限</a>
+                                </p>
+                                <ul class="item" >
+                                    <li class="js_wrapper item-position ">
+                                    	<em title="¥200以下">¥200以下</em>
+                                    	<input id="filter_price1" hidefocus="on" class="js_item" name="price1" type="checkbox" style="opacity: 0.01; position: absolute; top: 0px; left: 0px;">
+                                    </li>
+                                    <li class="js_wrapper item-position "> 
+                                    	<em title="¥200-¥300">¥200-¥300</em>
+                                    	<input id="filter_price2" hidefocus="on" class="js_item"  name="price2" type="checkbox" style="opacity: 0.01; position: absolute; top: 0px; left: 0px;">
+                                    </li>
+                                    <li class="js_wrapper item-position ">
+                                    	<em title="¥300-¥500">¥300-¥500</em>
+                                    	<input id="filter_price3" hidefocus="on" class="js_item" name="price3" type="checkbox" style="opacity: 0.01; position: absolute; top: 0px; left: 0px;">
+                                    </li>
+                                    <li class="js_wrapper item-position selected">
+                                    	<em title="¥500以上">¥500以上</em>
+                                    	<input id="filter_price4" hidefocus="on" class="js_item"  name="price4" type="checkbox" style="opacity: 0.01; position: absolute; top: 0px; left: 0px;">
+                                    </li>
+                                </ul>
+                                <div class="optional">自定义
+                                    <input type="text" id="" method="" class="priTxt js_cpf_from"/>-<input type="text" id="" method="" class="priTxt js_cpf_to"/>
+                                    <a href="#" onclick="return false" title="确定" class="hide priBut js_cpf_submit" style="display: none;">确定</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="gradeFilter" class="js_filter_panel">
+                        <div class="filter_b clr_after">
+                            <p class="filter_title">酒店级别</p>
+                            <div class="filter_rbox">
+                                <p class="unlimited"> <a class="" href="#">不限</a></p>
+                                <ul class="item">
+                                    <li><em title="经济型">经济型</em></li>
+                                    <li><em title="二星级/其他">二星级/其他</em></li>
+                                    <li><em title="三星级/舒适">三星级/舒适</em></li>
+                                    <li><em title="四星级/高档">四星级/高档</em></li>
+                                    <li><em title="五星级/豪华">五星级/豪华</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="brandFilter" class="js_filter_panel"></div>
+                    <div id="bnbJNHFilter" class="js_filter_panel jnh_title_style" style="display:none"></div>
+                    <div style="display:none" class="js_filter_panel" id="hotelTypeFilter"></div>
+                    <div style="display:none" class="js_filter_panel" id="equipFilter">
+                        <!-- KY.TODO 入住要求 -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter_more">
+                <a id="filter_more_link" hidefocus="on" class="less" href="#" onclick="return false">酒店类型及入住要求<em></em></a>
+            </div>
+        </div>
+        <!--筛选框 end-->		 
+
+   	  </div>
+
    	  <h4 class="m_3">Most Popular</h4>
    	  <div class="grid_1">
 		<div class="col-md-3 box_1">
