@@ -460,7 +460,9 @@ select {
 	background:#87d54d;
 }
 .content_top{
-	padding:5em 0;
+
+	padding: 0em 0;
+
 }
 /******** SAP ************/
 .sap_tabs{
